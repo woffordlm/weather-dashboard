@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h2 id="header-title" class="header-title">Weather Dashboard</h2>
+    </header>
+    <main class="main">
+            <section class="row d-flex">
+                <form id="left-column" class="left-column col-2 border border-primary p-3 m-4">
+                    <h2>Search for a City:</h2>
+                    <input id="input-id" placeholder="city name" type="text">
+                    <button type="submit" id="search-button" class="search-button">Search</button>
+                    <button id="clear-history">Clear History</button>
+                    <hr>
+                    <ul id="listed-cities" class="listed-cities">
+                    <!--listed buttons with various cities  -->
+                    </ul>
+                </form>     
+                <section id="right-column" class="right-column col-9 border border-primary p-3 m-4">
+                    <section id="city-specifics" class="city-specifics">
+                        <h2 id="city-title">City:<span id="span-id"></span > <span id="city-date"></span> </h2>
+                        <ul id="ul-parent">
+                            <li id="current-temp">Temp:<span></span></li>
+                            <li id="current-icon"></li>
+                            <li id="current-wind">Wind<span></span></li>
+                            <li id="current-humidity">Humidity<span></span></li>
+                            <li id="current-uv-index">UV Index<span></span></li>
+                        </ul>
+                    </section>
+                    <section id="forecast" class="forecast">
+                        <h3 id="forecast-title">5-Day Forecast:</h3>
+                        <section class="row">
+                            <div class=" m-2 col-2 day-one border border-primary bg-secondary text-white" id="day-one">
+                                <h3></h3>
+                                <p data-five-day-counter = "0" id="day-0-temp">temp</p>
+                                <p data-five-day-counter = "0" id="day-0-wind">Wind</p>
+                                <p data-five-day-counter = "0" id="day-0-humidity">Humidity</p>
+                            </div>
+                            <div class="m-2 col-2 day-one border border-primary bg-secondary text-white" id="day-one">
+                                <h3></h3>
+                                <p data-five-day-counter = '1' id="day-1-temp">temp</p>
+                                <p data-five-day-counter = "1" id="day-1-wind">Wind</p>
+                                <p data-five-day-counter = "1" id="day-1-humidity">Humidity</p>
+                            </div>
+                            <div class="m-2 col-2 day-one border border-primary bg-secondary text-white" id="day-one">
+                                <h3></h3>
+                                <p data-five-day-counter = "2" id="day-2-temp">temp</p>
+                                <p data-five-day-counter = "2" id="day-2-wind">Wind</p>
+                                <p data-five-day-counter = "2" id="day-2-humidity">Humidity</p>
+                            </div>
+                            <div class="m-2 col-2 day-one border border-primary bg-secondary text-white" id="day-one">
+                                <h3></h3>
+                                <p data-five-day-counter = "3" id="day-3-temp">temp</p>
+                                <p data-five-day-counter = "3" id="day-3-wind">Wind</p>
+                                <p data-five-day-counter = "3" id="day-3-humidity" >Humidity</p>
+                            </div>
+                            <div class="m-2 col-2 day-one border border-primary bg-secondary text-white" id="day-one">
+                                <h3></h3>
+                                <p data-five-day-counter = "4" id="day-4-temp">temp</p>
+                                <p data-five-day-counter = "4" id="day-4-wind">Wind</p>
+                                <p data-five-day-counter = "4" id="day-4-humidity">Humidity</p>
+                            </div>
+                        </section>
+                        <!-- data for 
+                        five day forecast-->
+                    </section>
+                </section>
+            </section>       
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

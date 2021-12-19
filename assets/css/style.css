@@ -1,0 +1,16 @@
+/* header section */
+header {
+    background-color: aquamarine;
+    text-align: center;
+    padding: 20px;
+}
+
+/* left column */
+input, button {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
