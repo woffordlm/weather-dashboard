@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -13,61 +16,74 @@
         <h2 id="header-title" class="header-title">Weather Dashboard</h2>
     </header>
     <main class="main">
+
             <section class="row d-flex">
-                <form id="left-column" class="left-column col-2 border border-primary p-3 m-4">
+                <form id="left-column" class="left-column col-xl-2 col-lg-2 col-md-2  border border-primary p-3 m-1">
                     <h2>Search for a City:</h2>
-                    <input id="input-id" placeholder="city name" type="text">
-                    <button type="submit" id="search-button" class="search-button">Search</button>
-                    <button id="clear-history">Clear History</button>
+                    <input value = "Winston-Salem" id="input-id" placeholder="city name" type="text">
+                    <button type="submit" id="search-button" class="search-button bg-dark text-white ">Search</button>
+                    <button id="clear-history" class="bg-dark text-white">Clear History</button>
                     <hr>
-                    <ul id="listed-cities" class="listed-cities">
+                    <ul id="listed-cities" class="listed-cities p-0">
                     <!--listed buttons with various cities  -->
                     </ul>
                 </form>     
-                <section id="right-column" class="right-column col-9 border border-primary p-3 m-4">
+                <section id="right-column" class="right-column col-xl-9 col-lg-9 col-md-9  border border-primary p-3 m-1">
                     <section id="city-specifics" class="city-specifics">
                         <h2 id="city-title">City:<span id="span-id"></span > <span id="city-date"></span> </h2>
                         <ul id="ul-parent">
                             <li id="current-temp">Temp:<span></span></li>
-                            <li id="current-icon"></li>
                             <li id="current-wind">Wind<span></span></li>
                             <li id="current-humidity">Humidity<span></span></li>
                             <li id="current-uv-index">UV Index<span></span></li>
                         </ul>
                     </section>
-                    <section id="forecast" class="forecast">
-                        <h3 id="forecast-title">5-Day Forecast:</h3>
-                        <section class="row">
-                            <div class=" m-2 col-2 day-one border border-primary bg-secondary text-white" id="day-one">
-                                <h3></h3>
-                                <p data-five-day-counter = "0" id="day-0-temp">temp</p>
-                                <p data-five-day-counter = "0" id="day-0-wind">Wind</p>
-                                <p data-five-day-counter = "0" id="day-0-humidity">Humidity</p>
-                            </div>
-                            <div class="m-2 col-2 day-one border border-primary bg-secondary text-white" id="day-one">
-                                <h3></h3>
-                                <p data-five-day-counter = '1' id="day-1-temp">temp</p>
-                                <p data-five-day-counter = "1" id="day-1-wind">Wind</p>
-                                <p data-five-day-counter = "1" id="day-1-humidity">Humidity</p>
-                            </div>
-                            <div class="m-2 col-2 day-one border border-primary bg-secondary text-white" id="day-one">
-                                <h3></h3>
-                                <p data-five-day-counter = "2" id="day-2-temp">temp</p>
-                                <p data-five-day-counter = "2" id="day-2-wind">Wind</p>
-                                <p data-five-day-counter = "2" id="day-2-humidity">Humidity</p>
-                            </div>
-                            <div class="m-2 col-2 day-one border border-primary bg-secondary text-white" id="day-one">
-                                <h3></h3>
-                                <p data-five-day-counter = "3" id="day-3-temp">temp</p>
-                                <p data-five-day-counter = "3" id="day-3-wind">Wind</p>
-                                <p data-five-day-counter = "3" id="day-3-humidity" >Humidity</p>
-                            </div>
-                            <div class="m-2 col-2 day-one border border-primary bg-secondary text-white" id="day-one">
-                                <h3></h3>
-                                <p data-five-day-counter = "4" id="day-4-temp">temp</p>
-                                <p data-five-day-counter = "4" id="day-4-wind">Wind</p>
-                                <p data-five-day-counter = "4" id="day-4-humidity">Humidity</p>
-                            </div>
+                    <section id="forecast" class="row ">
+                        <h3 class="m-1 col-xl-12" id="forecast-title">5-Day Forecast:</h3> 
+                        <br>
+                        <section >
+                            <section class="row justify-content-evenly">
+                                <div class="m-1 col-xl-3 col-lg-12 col-md-12 col-sm-11  day-one border border-primary bg-secondary text-white" id="day-one">
+                                    <h3></h3>
+                                    <p id="day-0-date"></p>
+                                    <div id="day-0-icon"></div>
+                                    <p data-five-day-counter = "0" id="day-0-temp">temp</p>
+                                    <p data-five-day-counter = "0" id="day-0-wind">Wind</p>
+                                    <p data-five-day-counter = "0" id="day-0-humidity">Humidity</p>
+                                </div>
+                                <div class=" m-1 col-xl-2 col-lg-5 col-md-3 col-sm-6  day-one border border-primary bg-secondary text-white" id="day-one">
+                                    <h3></h3>
+                                    <p id="day-1-date"></p>
+                                    <div id="day-1-icon"></div>
+                                    <p data-five-day-counter = '1' id="day-1-temp">temp</p>
+                                    <p data-five-day-counter = "1" id="day-1-wind">Wind</p>
+                                    <p data-five-day-counter = "1" id="day-1-humidity">Humidity</p>
+                                </div>
+                                <div class=" m-1 col-xl-2 col-lg-2 col-md-3 col-sm-5   day-one border border-primary bg-secondary text-white" id="day-one">
+                                    <h3></h3>
+                                    <p id="day-2-date"></p>
+                                    <div id="day-2-icon"></div>
+                                    <p data-five-day-counter = "2" id="day-2-temp">temp</p>
+                                    <p data-five-day-counter = "2" id="day-2-wind">Wind</p>
+                                    <p data-five-day-counter = "2" id="day-2-humidity">Humidity</p>
+                                </div>
+                                <div class=" m-1 col-xl-2 col-lg-2 col-md-5 col-sm-6  day-one border border-primary bg-secondary text-white" id="day-one">
+                                    <h3></h3>
+                                    <p id="day-3-date"></p>
+                                    <div id="day-3-icon"></div>
+                                    <p data-five-day-counter = "3" id="day-3-temp">temp</p>
+                                    <p data-five-day-counter = "3" id="day-3-wind">Wind</p>
+                                    <p data-five-day-counter = "3" id="day-3-humidity" >Humidity</p>
+                                </div>
+                                <div class=" m-1 col-xl-2 col-lg-2 col-md-12 col-sm-5  day-one border border-primary bg-secondary text-white" id="day-one">
+                                    <h3></h3>
+                                    <p id="day-4-date"></p>
+                                    <div id="day-4-icon"></div>
+                                    <p data-five-day-counter = "4" id="day-4-temp">temp</p>
+                                    <p data-five-day-counter = "4" id="day-4-wind">Wind</p>
+                                    <p data-five-day-counter .= "4" id="day-4-humidity">Humidity</p>
+                                </div>
+                            </section>
                         </section>
                         <!-- data for 
                         five day forecast-->

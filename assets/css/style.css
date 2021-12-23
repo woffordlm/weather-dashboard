@@ -1,9 +1,20 @@
 /* header section */
+* {
+    font-family:monospace;
+    box-sizing: border-box;
+}
+.row {
+    margin: 5px;
+}
 header {
-    background-color: aquamarine;
+    background-color: teal;
     text-align: center;
     padding: 20px;
 }
+header h2 {
+    color: white;
+}
+
 
 /* left column */
 input, button {
@@ -14,3 +25,9 @@ input, button {
 ul {
     list-style-type: none;
 }
+
+@media screen and (max-width: 992px) {
+    header {
+      padding-bottom: 20px;
+      justify-content: center;
+      position: relative;
