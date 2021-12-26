@@ -16,7 +16,7 @@
         <h2 id="header-title" class="header-title">Weather Dashboard</h2>
     </header>
     <main class="main">
-
+            <!-- this section is the form conponent for searching cities and clearing history -->
             <section class="row d-flex">
                 <form id="left-column" class="left-column col-xl-2 col-lg-2 col-md-2  border border-primary p-3 m-1">
                     <h2>Search for a City:</h2>
@@ -25,9 +25,10 @@
                     <button id="clear-history" class="bg-dark text-white">Clear History</button>
                     <hr>
                     <ul id="listed-cities" class="listed-cities p-0">
-                    <!--listed buttons with various cities  -->
+                    <!-- dynamic listed buttons with various city nanes  -->
                     </ul>
-                </form>     
+                </form>
+                <!-- This section displays the current weather conditions of the specified cityt -->
                 <section id="right-column" class="right-column col-xl-9 col-lg-9 col-md-9  border border-primary p-3 m-1">
                     <section id="city-specifics" class="city-specifics">
                         <h2 id="city-title">City:<span id="span-id"></span > <span id="city-date"></span> </h2>
@@ -38,6 +39,7 @@
                             <li id="current-uv-index">UV Index<span></span></li>
                         </ul>
                     </section>
+                    <!-- this section displays the five day forecast -->
                     <section id="forecast" class="row ">
                         <h3 class="m-1 col-xl-12" id="forecast-title">5-Day Forecast:</h3> 
                         <br>
@@ -85,8 +87,6 @@
                                 </div>
                             </section>
                         </section>
-                        <!-- data for 
-                        five day forecast-->
                     </section>
                 </section>
             </section>       

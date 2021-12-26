@@ -82,6 +82,7 @@ function getFiveDay(lat, lon){
             
             
             var dayOneIconEL = document.getElementById("day-"+ fiveDayIndex +"-icon");
+            dayOneIconEL.innerText="";
             var dailyIconEl = document.createElement("img");
             dailyIconEl.setAttribute("src","https://openweathermap.org/img/wn/" + dailyIcon + "@2x.png");
             dayOneIconEL.appendChild(dailyIconEl);
@@ -121,6 +122,7 @@ function getCurrentWeatherData (cityEl){
             
         })
 }
+// this function will fill the page with information upon load. 
 function cityPreLoad(){
     fiveDayIndex=0
     var cityEl = cityInputEl.value.trim();
@@ -173,107 +175,3 @@ clearButton.addEventListener("click",clearHistory);
 searchButton.addEventListener("click", formSubmitHandler);
 historyList.addEventListener("click", historyButtonFill);
 
-
-
-
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// for (let i = 0; i < data.daily.length; i++) {
-        //     console.log(data.daily[i].temp.day);
-        //     var dailyTemp = data.daily[i].temp.day;
-        //     var dailyWind = data.daily[i].wind_speed;
-        //     var dailyHumidity = data.daily[i].humidity;
-                
-        //     var dailyTempOne = document.getElementById("day-two-temp");
-        //     var dailyWindOne = document.getElementById("day-two-wind");
-        //     var dailyHumidityOne = document.getElementById("day-two-humidity");
-                
-        //     dailyTempOne.innerHTML = "Temp: " + dailyTemp + "°F";
-        //     dailyWindOne.innerHTML = "Wind Speed: " + dailyWind + "mph";
-        //     dailyHumidityOne.innerHTML = "Humidity: " + dailyHumidity + "%";
-        // }
-        // for (let i = 0; i < data.daily.length; i++) {
-        //     console.log(data.daily[i].temp.day);
-        //     var dailyTemp = data.daily[i].temp.day;
-        //     var dailyWind = data.daily[i].wind_speed;
-        //     var dailyHumidity = data.daily[i].humidity;
-                
-        //     var dailyTempOne = document.getElementById("day-three-temp");
-        //     var dailyWindOne = document.getElementById("day-three-wind");
-        //     var dailyHumidityOne = document.getElementById("day-three-humidity");           
-        //     dailyTempOne.innerHTML = "Temp: " + dailyTemp + "°F";
-        //     dailyWindOne.innerHTML = "Wind Speed: " + dailyWind + "mph";
-        //     dailyHumidityOne.innerHTML = "Humidity: " + dailyHumidity + "%";
-        // } 
-        // for (let i = 0; i < data.daily.length; i++) {
-        //     console.log(data.daily[i].temp.day);
-        //     var dailyTemp = data.daily[i].temp.day;
-        //     var dailyWind = data.daily[i].wind_speed;
-        //     var dailyHumidity = data.daily[i].humidity;
-                
-        //     var dailyTempOne = document.getElementById("day-three-temp");
-        //     var dailyWindOne = document.getElementById("day-three-wind");
-        //     var dailyHumidityOne = document.getElementById("day-three-humidity");
-                    
-        //     dailyTempOne.innerHTML = "Temp: " + dailyTemp + "°F";
-        //     dailyWindOne.innerHTML = "Wind Speed: " + dailyWind + "mph";
-        //     dailyHumidityOne.innerHTML = "Humidity: " + dailyHumidity + "%";    
-        // }
-        // for (let i = 0; i < data.daily.length; i++) {
-        //     console.log(data.daily[i].temp.day);
-        //     var dailyTemp = data.daily[i].temp.day;
-        //     var dailyWind = data.daily[i].wind_speed;
-        //     var dailyHumidity = data.daily[i].humidity;
-                
-        //     var dailyTempOne = document.getElementById("day-four-temp");
-        //     var dailyWindOne = document.getElementById("day-four-wind");
-        //     var dailyHumidityOne = document.getElementById("day-four-humidity");
-                    
-        //     dailyTempOne.innerHTML = "Temp: " + dailyTemp + "°F";
-        //     dailyWindOne.innerHTML = "Wind Speed: " + dailyWind + "mph";
-        //     dailyHumidityOne.innerHTML = "Humidity: " + dailyHumidity + "%";    
-        // }
-        // for (let i = 0; i < data.daily.length; i++) {
-        //     console.log(data.daily[i].temp.day);
-        //     var dailyTemp = data.daily[i].temp.day;
-        //     var dailyWind = data.daily[i].wind_speed;
-        //     var dailyHumidity = data.daily[i].humidity;
-                
-        //     var dailyTempOne = document.getElementById("day-five-temp");
-        //     var dailyWindOne = document.getElementById("day-five-wind");
-        //     var dailyHumidityOne = document.getElementById("day-five-humidity");
-                    
-        //     dailyTempOne.innerHTML = "Temp: " + dailyTemp + "°F";
-        //     dailyWindOne.innerHTML = "Wind Speed: " + dailyWind + "mph";
-        //     dailyHumidityOne.innerHTML = "Humidity: " + dailyHumidity + "%";    
-        // }
-
-
-        // insert weather condtion icons into the 5 day section
-// function getIcons(cityNames){
-    
-//     var requestIconUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityNames + "&appid=" + APIKey;
-//     ; 
-//     fetch(requestIconUrl)
-//         .then(function (response){
-//         return response.json();
-//         })
-//         .then(function(data){
-//             console.log(data);
-//         })
-// }
