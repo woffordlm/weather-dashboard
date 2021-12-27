@@ -14,27 +14,35 @@ timeEl.textContent= now
 
 // upon page load this function will fill the page with past searches pulling from local storage. 
 // this function cycles through the array of objects in local storage
-function fillHistory(){
+function fillHistory(cityEl){
     var savedCityNames=JSON.parse(localStorage.getItem("cityName")) || []
-    console.log(savedCityNames.length)
-    for (var i = 0; i < savedCityNames.length -1; i++) {
-        console.log(savedCityNames[historyIndex].name)
-        var storedName = savedCityNames[historyIndex].name;
-        
-        var listedCity = document.createElement("li");
-        listedCity.setAttribute("class", "w-100")
-        var historyButton = document.createElement("button")
-        historyButton.setAttribute("class", "bg-primary text-white w-100 ")
-        historyButton.textContent = storedName
-        listedCity.appendChild(historyButton)
-        historyList.appendChild(listedCity);
-        historyIndex++
-    }
-}
+    console.log(savedCityNames[1].name.toLowerCase())
+     // condtional preventing adding same city to history multiple times
+ 
+          console.log(cityEl)
+        for (var i = 0; i < savedCityNames.length; i++) {
+            // if(savedCityNames[i].name.toLowerCase() != cityEl.toLowerCase()) { 
+                // if(!$.inArray(value, array))array.push(value);
+
+
+            console.log(savedCityNames[historyIndex].name)
+            var storedName = savedCityNames[historyIndex].name;
+            
+            var listedCity = document.createElement("li");
+            listedCity.setAttribute("class", "w-100")
+            var historyButton = document.createElement("button")
+            historyButton.setAttribute("class", "bg-primary text-white w-100 ")
+            historyButton.textContent = storedName
+            listedCity.appendChild(historyButton)
+            historyList.appendChild(listedCity);
+            historyIndex++
+            
+        }
+     }  
 // this function triggers fill history to load
 window.onload = function () {
     fillHistory();
-    cityPreLoad();
+    // cityPreLoad();
     
 }
 // this function gives functionality to the clear history button, by clearing local storage.
@@ -56,7 +64,34 @@ function getFiveDay(lat, lon){
         // this section fills the UV index in the current weather div
         var currentUvIndex = document.getElementById('current-uv-index');  
         currentUvIndex.textContent = "UV Index: " + data.current.uvi 
-        console.log(data.daily)
+        console.log(data.current.uvi);
+        // color code the UVI index
+
+        if (data.current.uvi  >= 1 || data.current.uvi <=2){
+            currentUvIndex.style.backgroundColor = "green";
+            currentUvIndex.style.width = "25%";
+        }
+        if (data.current.uvi  >= 1 || data.current.uvi <=2){
+            currentUvIndex.style.backgroundColor = "green";
+            currentUvIndex.style.width = "25%";
+        }
+        if (data.current.uvi  >= 3 && data.current.uvi <=5){
+            currentUvIndex.style.backgroundColor = "yellow";
+            currentUvIndex.style.width = "25%";
+        }
+        if (data.current.uvi  >= 6 && data.current.uvi <=7){
+            currentUvIndex.style.backgroundColor = "orange";
+            currentUvIndex.style.width = "25%";
+        }
+        if (data.current.uvi  >= 8 && data.current.uvi <=10){
+            currentUvIndex.style.backgroundColor = "red";
+            currentUvIndex.style.width = "25%";
+        }
+        if (data.current.uvi  >= 11){
+            currentUvIndex.style.backgroundColor = "purple";
+            currentUvIndex.style.width = "25%";
+        }
+
         // this loop fill the five day forecasts
         fiveDayIndex= 0
         daycounter = 1
@@ -122,24 +157,26 @@ function getCurrentWeatherData (cityEl){
             
         })
 }
-// this function will fill the page with information upon load. 
-function cityPreLoad(){
-    fiveDayIndex=0
-    var cityEl = cityInputEl.value.trim();
-    if(cityEl){
-        getCurrentWeatherData(cityEl);
-        var cityInfo = {
-            name: cityEl
-        }
-        var savedCityNames=JSON.parse(localStorage.getItem("cityName")) || []
-        savedCityNames.push(cityInfo);
-        localStorage.setItem("cityName", JSON.stringify(savedCityNames));
-        cityInputEl.value = "";
-        fillHistory();
-    } else {
-        alert("Please enter a City name.")
-    }
-}
+
+// this function will fill the page with information upon load.
+// this is currently commented out in case the developer wishes to provide this function
+// function cityPreLoad(){
+//     fiveDayIndex=0
+//     var cityEl = cityInputEl.value.trim();
+//     if(cityEl){
+//         getCurrentWeatherData(cityEl);
+//         var cityInfo = {
+//             name: cityEl
+//         }
+//         var savedCityNames=JSON.parse(localStorage.getItem("cityName")) || []
+//         savedCityNames.push(cityInfo);
+//         localStorage.setItem("cityName", JSON.stringify(savedCityNames));
+//         cityInputEl.value = "";
+//         fillHistory(cityEl);
+//     } else {
+//         alert("Please enter a City name.")
+//     }
+// }
 // form submit handler
 // this passes the input city name into different functions and saves the city name to local storage
 function formSubmitHandler(event){
@@ -175,3 +212,5 @@ clearButton.addEventListener("click",clearHistory);
 searchButton.addEventListener("click", formSubmitHandler);
 historyList.addEventListener("click", historyButtonFill);
 
+
+//figure out a way to prevent the same city from duplicating history
